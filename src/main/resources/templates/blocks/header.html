@@ -1,0 +1,12 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <ul class="nav nav-pills">
+            <li class="nav-item" th:if="${hiddenEl=='user'}"><button type="button" class="btn btn-dark" onclick="window.location.href='/auth/login'">login</button></li>
+            <li class="nav-item" th:if="${hiddenEl=='admin'}"><form action="/auth/logout" method="post"><button type="submit" class="btn btn-dark">logout</button></form></li>
+            <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="/menu" class="nav-link">Меню</a></li>
+            <li class="nav-item" th:if="${hiddenEl=='admin'}"><a href="/menu/add" class="nav-link">Добавить продукты</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link">О нас</a></li>
+        </ul>
+    </header>
+</div>
